@@ -9,9 +9,9 @@ import java.util.Arrays;
 public class SpringSystemApplication {
 
 	public static void main(String[] args) {
-		RecommenderImplementation recommender = new RecommenderImplementation();
-		String[] result = recommender.recommendMovies("Live");
-		System.out.println(Arrays.toString(result));
+		System.out.println(Arrays.toString(new RecommenderImplementation(new ContentBasedFilter()).recommendMovies("Live")));
+		System.out.println(Arrays.toString(new RecommenderImplementation(new CollaborativeFilter()).recommendMovies("Live")));
+
 //		SpringApplication.run(SpringSystemApplication.class, args);
 	}
 
