@@ -17,7 +17,23 @@ public class SpringSystemApplication {
 		// spring application context create beans
 		// instead of manually creating beans, we could pick it up from there and use it to call recommendMovies
 		ApplicationContext applicationContext = SpringApplication.run(SpringSystemApplication.class, args);
+		// filed injection
+		System.out.println("------------");
+		System.out.println("Field Injection");
+		System.out.println("------------");
 		System.out.println(Arrays.toString(applicationContext.getBean(RecommenderImplementation.class).recommendMovies("Live")));
+
+		System.out.println("------------");
+		System.out.println("Constructor Injection");
+		System.out.println("------------");
+		System.out.println(Arrays.toString(applicationContext.getBean(RecommenderImplementationConsInjection.class).recommendMovies("Live")));
+
+
+		System.out.println("------------");
+		System.out.println("Setter Injection");
+		System.out.println("------------");
+		System.out.println(Arrays.toString(applicationContext.getBean(RecommenderImplementationSetterInjection.class).recommendMovies("Live")));
+
 
 	}
 
