@@ -9,17 +9,12 @@ class RecommenderImplementation {
 
   // use interface to select filter instead of hardcoded implementations
   // the Autowired annotation tells Spring that RecommenderImplementation needs an object of type Filter
+  // autowired by name
   @Autowired
-  private Filter filter;
-
-  // in constructor we manually inject the implementation (DI)
-  RecommenderImplementation(Filter filter) {
-    super();
-    this.filter = filter;
-  }
+  private Filter contentBasedFilter;
 
   String[] recommendMovies(String movie) {
-    System.out.println(filter);
-    return filter.getRecommendations(movie);
+    System.out.println(contentBasedFilter);
+    return contentBasedFilter.getRecommendations(movie);
   }
 }
