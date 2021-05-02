@@ -1,8 +1,11 @@
 package com.monpro.springindepth.springsystem;
 
+import com.monpro.springindepth.springsystemalternative.HybridFilter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.FilterType;
 
 import java.util.Arrays;
 
@@ -11,6 +14,7 @@ import java.util.Arrays;
 // 2.EnableAutoConfiguration: allows the application to add beans using classpath definitions
 // 3.ComponentScan: directs Spring into search for components in the path specified(including subpackages)
 @SpringBootApplication
+@ComponentScan({"com.monpro.springindepth.springsystem", "com.monpro.springindepth.springsystemalternative"})
 public class SpringSystemApplication {
 
 	public static void main(String[] args) {
@@ -53,6 +57,7 @@ public class SpringSystemApplication {
 		System.out.println(filter.getMovie());
 		System.out.println(filter.getMovie());
 
+		System.out.println(applicationContext.getBean(HybridFilter.class));
 	}
 
 }
