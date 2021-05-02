@@ -20,20 +20,32 @@ public class SpringSystemApplication {
 		// filed injection
 		System.out.println("------------");
 		System.out.println("Field Injection");
-		System.out.println("------------");
 		System.out.println(Arrays.toString(applicationContext.getBean(RecommenderImplementation.class).recommendMovies("Live")));
+		System.out.println("------------");
 
 		System.out.println("------------");
 		System.out.println("Constructor Injection");
-		System.out.println("------------");
 		System.out.println(Arrays.toString(applicationContext.getBean(RecommenderImplementationConsInjection.class).recommendMovies("Live")));
-
+		System.out.println("------------");
 
 		System.out.println("------------");
 		System.out.println("Setter Injection");
-		System.out.println("------------");
 		System.out.println(Arrays.toString(applicationContext.getBean(RecommenderImplementationSetterInjection.class).recommendMovies("Live")));
+		System.out.println("------------");
 
+		System.out.println("------------");
+		System.out.println("Singleton Scope");
+		System.out.println(applicationContext.getBean(ContentBasedFilter.class));
+		System.out.println(applicationContext.getBean(ContentBasedFilter.class));
+		System.out.println(applicationContext.getBean(ContentBasedFilter.class));
+		System.out.println("------------");
+
+		System.out.println("------------");
+		System.out.println("Prototype Scope");
+		System.out.println(applicationContext.getBean(CollaborativeFilter.class));
+		System.out.println(applicationContext.getBean(CollaborativeFilter.class));
+		System.out.println(applicationContext.getBean(CollaborativeFilter.class));
+		System.out.println("------------");
 
 	}
 
