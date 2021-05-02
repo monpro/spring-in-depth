@@ -47,6 +47,12 @@ public class SpringSystemApplication {
 		System.out.println(applicationContext.getBean(CollaborativeFilter.class));
 		System.out.println("------------");
 
+		ContentBasedFilter filter = applicationContext.getBean(ContentBasedFilter.class);
+		System.out.println(filter);
+		System.out.println(filter.getMovie());
+		System.out.println(filter.getMovie());
+		System.out.println(filter.getMovie());
+
 	}
 
 }
